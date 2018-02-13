@@ -651,47 +651,53 @@ There is also partial support for relationships and compound documents.
 ```json
 {
   "data": {
-    {
-      "id":    1,
-      "type": "ballers",
-      "attributes": { name: "Roger Federer" },
-      "relationships": {
-        "sponsors": {
-          "data": [
-            {
-              "type": "sponsors",
-              "id": 1
-            },
-            {
-              "type": "sponsors",
-              "id": 2
-            }
-          ]
-        },
-        "country": {
-          "data": {
-            "type": "countries",
+    "id": 1,
+    "type": "ballers",
+    "attributes": {
+      "name": "Roger Federer"
+    },
+    "relationships": {
+      "sponsors": {
+        "data": [
+          {
+            "type": "sponsors",
             "id": 1
+          },
+          {
+            "type": "sponsors",
+            "id": 2
           }
+        ]
+      },
+      "country": {
+        "data": {
+          "type": "countries",
+          "id": 1
         }
       }
     }
   },
-  included: [
+  "included": [
     {
-      type: 'sponsors',
-      id: 1,
-      attributes: { company: 'Nike' }
+      "type": "sponsors",
+      "id": 1,
+      "attributes": {
+        "company": "Nike"
+      }
     },
     {
-      type: 'sponsors',
-      id: 2,
-      attributes: { company: 'Rolex' }
+      "type": "sponsors",
+      "id": 2,
+      "attributes": {
+        "company": "Rolex"
+      }
     },
     {
-      type: 'countries',
-      id: 1,
-      attributes: { name: 'Switzerland' }
+      "type": "countries",
+      "id": 1,
+      "attributes": {
+        "name": "Switzerland"
+      }
     }
   ]
 }
@@ -721,28 +727,29 @@ nature of this is something the client will look to support down the road.
 ```json
 {
   "data": {
-    {
-      "id":    1,
-      "type": "ballers",
-      "attributes": { "name": "Roger Federer", "country_id": 100},
-      "relationships": {
-        "sponsors": {
-          "data": [
-            {
-              "type": "sponsors",
-              "id": 1
-            },
-            {
-              "type": "sponsors",
-              "id": 2
-            }
-          ]
-        },
-        "country": {
-          "data": {
-            "type": "countries",
-            "id": 100
+    "id": 1,
+    "type": "ballers",
+    "attributes": {
+      "name": "Roger Federer",
+      "country_id": 100
+    },
+    "relationships": {
+      "sponsors": {
+        "data": [
+          {
+            "type": "sponsors",
+            "id": 1
+          },
+          {
+            "type": "sponsors",
+            "id": 2
           }
+        ]
+      },
+      "country": {
+        "data": {
+          "type": "countries",
+          "id": 100
         }
       }
     }
