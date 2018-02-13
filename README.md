@@ -715,9 +715,9 @@ class Baller
   type :developers
 end
 
-fed = Baller.find(1)
-fed.sponsors.map(&:company) # => ["Nike", "Rolex"]
-fed.country.name # => 'Switzerland'
+federer = Baller.find(1)
+federer.sponsors.map(&:company) # => ["Nike", "Rolex"]
+federer.country.name # => 'Switzerland'
 ```
 
 However, relationships are ignored unless those resources are included. JSON API relationships
@@ -761,9 +761,9 @@ Note, the presence of country_id is still depended on in order to fetch the belo
 association. Thus, given the preceding response which does not have included resources:
 
 ```ruby
-fed = Baller.find(1) # => GET "/ballers/1"
-fed.sponsors # => GET "/ballers/1/sponsors"
-fed.country # => GET "/ballers/1/country/100
+federer = Baller.find(1) # => GET "/ballers/1"
+federer.sponsors # => GET "/ballers/1/sponsors"
+federer.country # => GET "/ballers/1/country/100
 ```
 
 ### Custom requests
